@@ -27,8 +27,11 @@ dispatch(fetchContacts())
       <ContactForm />
       {isLoading && <p>Loading...</p>}
       
-      {!contacts.length ? <p>Create your first contact</p> : <SearchBox /> && <ContactList />}
-      {isError && <p>Something going wrong! Try again later</p>}
+     {contacts.length > 0 && <SearchBox />}
+      
+       {!contacts.length && <p>Create your first contact</p>}
+      <ContactList />  
+      {isError && <p>Something went wrong! Try again later</p>}
       
   
 </div>
